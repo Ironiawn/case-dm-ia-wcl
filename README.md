@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ### 2. Configurar variável de ambiente
 
-Crie um arquivo `.env`:
+Crie um arquivo `.env` (siga `.env.example`):
 
 ```env
 OPENAI_API_KEY=your_api_key_here
@@ -41,7 +41,7 @@ python main.py
 3. O sistema responderá com base na base de conhecimento
 4. Comandos disponíveis:
 
-   * `voltar` → retornar ao menu de agentes
+   * `trocar` → retornar ao menu de agentes
    * `sair` → encerrar o sistema
 
 ---
@@ -51,7 +51,6 @@ python main.py
 * Como posso me prevenir contra fraudes?
 * Como entrar em contato com o banco?
 * Como investir?
-* Como me candidatar a uma vaga?
 
 ---
 
