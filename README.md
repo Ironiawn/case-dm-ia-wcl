@@ -23,7 +23,7 @@ A interação é feita via terminal, com agentes especializados por tema.
 python --version
 ```
 
-Se aparecer a versão do Python, está tudo certo 👍
+Se aparecer a versão do Python, está tudo certo :D
 
 ---
 
@@ -32,6 +32,9 @@ Se aparecer a versão do Python, está tudo certo 👍
 ```bash
 python -m venv venv
 ```
+
+Tem o Visual Studio Code instalado? Melhor ainda! 
+Vá nas extensões e use a do próprio Python.. rápida e fácil.
 
 Ativar o ambiente:
 
