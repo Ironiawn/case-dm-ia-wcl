@@ -12,13 +12,52 @@ A interação é feita via terminal, com agentes especializados por tema.
 
 ## 🚀 Como Iniciar
 
-### 1. Instalar dependências
+### 0. Instalar o Python (caso ainda não tenha)
+
+1. Acesse: https://www.python.org/downloads/
+2. Baixe a versão mais recente do Python
+3. Durante a instalação, marque a opção **"Add Python to PATH"**
+4. Após instalar, verifique no terminal:
+
+```bash
+python --version
+```
+
+Se aparecer a versão do Python, está tudo certo 👍
+
+---
+
+### 1. Criar ambiente virtual (recomendado)
+
+```bash
+python -m venv venv
+```
+
+Ativar o ambiente:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / Mac**
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 2. Instalar dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Configurar variável de ambiente
+---
+
+### 3. Configurar variável de ambiente
 
 Crie um arquivo `.env` (siga `.env.example`):
 
@@ -26,7 +65,9 @@ Crie um arquivo `.env` (siga `.env.example`):
 OPENAI_API_KEY=your_api_key_here
 ```
 
-### 3. Executar o projeto
+---
+
+### 4. Executar o projeto
 
 ```bash
 python main.py
@@ -39,10 +80,11 @@ python main.py
 1. Ao iniciar, escolha um agente digitando o número correspondente
 2. Faça sua pergunta normalmente
 3. O sistema responderá com base na base de conhecimento
-4. Comandos disponíveis:
 
-   * `trocar` → retornar ao menu de agentes
-   * `sair` → encerrar o sistema
+Comandos disponíveis:
+
+* `trocar` → retornar ao menu de agentes
+* `sair` → encerrar o sistema
 
 ---
 
