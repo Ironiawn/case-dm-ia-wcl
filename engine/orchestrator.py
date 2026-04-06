@@ -2,6 +2,7 @@ import os
 import re
 from engine import agent, rag
 from pypdf import PdfReader
+import config
 
 instruction_data_cache = None
 knowledge_data_cache = None
@@ -53,10 +54,10 @@ def pick_agent(agentId: int):
     # Avaliar agente a ser utilizado
     if agentId == 1:
         # Agente responsável por Anti-Fraude
-        return "agents/anti_fraude.md"
+        return os.path.join(config.get_project_root(), "agents", "anti_fraude.md")
     elif agentId == 2:
         # Agente responsável por Soluções
-        return "agents/solucoes.md"
+        return os.path.join(config.get_project_root(), "agents", "solucoes.md")
     else:
         return "-1" # Aqui não encontramos o agente, ou seja, o agenteId é inválido
     
@@ -74,10 +75,11 @@ def load_instruction_data():
     rules = ""
 
     for folder in ["rules", "agents"]:
-        file_names = os.listdir(folder)
+        folder_path = os.path.join(config.get_project_root(), folder)
+        file_names = os.listdir(folder_path)
 
         for file_name in file_names:
-            file_path = folder + "/" + file_name
+            file_path = os.path.join(folder_path, file_name)
             text = open(file_path, "r", encoding="utf-8").read()
             files[file_path] = text
 
@@ -144,11 +146,12 @@ def load_knowledge_data():
 
     documents = []
 
-    if not os.path.exists("data"):
+    data_path = os.path.join(config.get_project_root(), "data")
+    if not os.path.exists(data_path):
         knowledge_data_cache = documents
         return knowledge_data_cache
 
-    for root, _, file_names in os.walk("data"):
+    for root, _, file_names in os.walk(data_path):
         for file_name in file_names:
             file_path = os.path.join(root, file_name)
             file_items = read_knowledge_file(file_path)

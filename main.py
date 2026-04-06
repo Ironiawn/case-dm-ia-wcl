@@ -3,6 +3,7 @@ from engine.agent import tag_sessao_encerrada
 from termcolor import colored
 from datetime import datetime
 import os
+import config
 
 
 def select_agent():
@@ -28,8 +29,9 @@ def write_audit_log(question: str, audit_items: list[dict]):
     if not audit_items:
         return
 
-    os.makedirs("logs", exist_ok=True)
-    log_path = os.path.join("logs", "rag_audit.log")
+    dir = os.path.join(config.get_project_root(), "logs")
+    os.makedirs(dir, exist_ok=True)
+    log_path = os.path.join(dir, "rag_audit.log")
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     with open(log_path, "a", encoding="utf-8") as log_file:
