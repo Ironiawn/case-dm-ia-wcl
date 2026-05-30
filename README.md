@@ -68,6 +68,13 @@ Crie um arquivo `.env` (siga `.env.example`):
 OPENAI_API_KEY=your_api_key_here
 ```
 
+Para obter uma chave de API da OpenAI:
+1. Vá em [OpenAI API Keys](https://platform.openai.com/api-keys) e crie uma nova secret
+2. Copie a secret e cole no .env descrito acima
+3. Lembre-se de colocar créditos de uso (cobrança em dólares americanos) em [OpenAI Billing](https://platform.openai.com/settings/organization/billing/overview) em "Add to credit ballance" - o modelo de exemplo utilizado no projeto não gasta muito!
+4. Na aba "Security", como recomendação, vá em "IP allowlist" e inclua o seu IP como única permissão de uso de suas chaves OpenAI [Open AI IP allowlist](https://platform.openai.com/settings/organization/security/ip-allowlist)
+
+
 ---
 
 ### 4. Executar o projeto
